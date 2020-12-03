@@ -15,7 +15,7 @@ def get_price():
         price_2 = price_1[len(price_1) - 1].find(class_ = 'saleprice pricingSummary-details-final-price').text
         clean_price = float(price_2.strip()[1:].replace(",",""))
     except:
-        price = 0
+        clean_price = 0
 
     if clean_price < 1200:
         send_email(clean_price)
